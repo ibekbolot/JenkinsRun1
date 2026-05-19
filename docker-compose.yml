@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+  selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium
+    ports:
+      - "4444:4444"
+    shm_size: 2gb
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: selenium-tests
+    depends_on:
+      - selenium
+    environment:
+      - SELENIUM_URL=http://selenium:4444/wd/hub
+    command: ./gradlew clean test
