@@ -22,4 +22,17 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            junit 'build/test-results/test/*.xml'
+
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'build/allure-results']]
+            ])
+        }
+    }
+
 }
