@@ -5,7 +5,7 @@ import lombok.experimental.FieldDefaults;
 
 @AllArgsConstructor
 @Builder
-@EqualsAndHashCode
+//@EqualsAndHashCode
 @Setter
 @Getter
 @ToString

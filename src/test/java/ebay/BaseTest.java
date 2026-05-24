@@ -20,7 +20,7 @@ public class BaseTest {
 //    }
 
     // For Headless runs:
-    public static void setUp() {
+    public void setUp() {
 
         Configuration.browser = "chrome";
         Configuration.headless = true;

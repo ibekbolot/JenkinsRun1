@@ -1,4 +1,6 @@
 package ebay;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -6,6 +8,7 @@ public class NewUserSignUp extends BaseTest{
 
     @Test
     void newUserSignUp() throws InterruptedException {
+        Configuration.headless = true;
         open("https://automationexercise.com/login");
         newUserSignUp.enterName("sam").enterEmail("sam@cat.com").clickSignUpBtn();
         Thread.sleep(5000);

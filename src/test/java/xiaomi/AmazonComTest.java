@@ -1,15 +1,22 @@
 package xiaomi;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AmazonComTest {//extends BaseTest{
+
+    @BeforeEach
+    void setUp() {
+        Configuration.headless = true;
+        Configuration.browser = "chrome"; // optional, chrome is default
+    }
 
     @Test
     void AmazonTest() throws InterruptedException{
